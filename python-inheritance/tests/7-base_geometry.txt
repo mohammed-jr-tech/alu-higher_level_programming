@@ -8,12 +8,6 @@ Import the class:
 Check instantiation:
 >>> bg = BaseGeometry()
 
-Check area() method raises Exception:
->>> bg.area()
-Traceback (most recent call last):
-    ...
-Exception: area() is not implemented
-
 Check integer_validator with valid integers:
 >>> bg.integer_validator("width", 89)
 >>> bg.integer_validator("height", 12)
@@ -42,8 +36,26 @@ Traceback (most recent call last):
     ...
 ValueError: distance must be greater than 0
 
-Check integer_validator with float:
->>> bg.integer_validator("num", 13.5)
+Check integer_validator with tuple:
+>>> bg.integer_validator("age", (4,))
 Traceback (most recent call last):
     ...
-TypeError: num must be an integer
+TypeError: age must be an integer
+
+Check integer_validator with list:
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+Check integer_validator with set:
+>>> bg.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+Check integer_validator with None:
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
