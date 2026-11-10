@@ -1,0 +1,39 @@
+======================
+How to Use MyList
+======================
+
+Import the class:
+>>> MyList = __import__('1-my_list').MyList
+
+Check instantiation:
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+Check inheritance:
+>>> issubclass(MyList, list)
+True
+
+Check append and __str__:
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> print(my_list)
+[3, 1, 2]
+
+Check print_sorted() with not sorted append:
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+Check print_sorted() with negative numbers:
+>>> neg_list = MyList()
+>>> neg_list.append(-5)
+>>> neg_list.append(2)
+>>> neg_list.append(-1)
+>>> neg_list.print_sorted()
+[-5, -1, 2]
+
+Check print_sorted() with empty list:
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
